@@ -156,7 +156,7 @@ class File:
                 # no x values are given, but they can be generated
                 self.dat_fmt = 'gx-y'
 
-            print('{}({})'.format(self.dat_fmt, self.fnsub))
+            #print('{}({})'.format(self.dat_fmt, self.fnsub))
 
             sub_pos = self.head_siz
 
@@ -241,7 +241,10 @@ class File:
                         self.log_other.append(x)
 
             # spacing between data
-            self.spacing = (self.flast - self.ffirst) / (self.fnpts - 1)
+            try:
+                self.spacing = (self.flast - self.ffirst) / (self.fnpts - 1)
+            except ZeroDivisionError:
+                self.spacing = 0
 
             # call functions
             self.set_labels()
