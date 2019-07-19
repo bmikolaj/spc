@@ -37,7 +37,7 @@ class File:
     old_head_str = "<cchfffcchcccc8shh28s130s30s32s"
     logstc_str = "<iiiii44s"
 
-    # byte positon of various parts of the file
+    # byte position of various parts of the file
     head_siz = 512
     old_head_siz = 256
     subhead_siz = 32
@@ -50,7 +50,7 @@ class File:
     # ------------------------------------------------------------------------
 
     def __init__(self, filename):
-        # load entire into memory temporarly
+        # load entire into memory temporarily
         with open(filename, "rb") as fin:
             content = fin.read()
             # print "Read raw data"
